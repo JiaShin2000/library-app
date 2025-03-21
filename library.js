@@ -24,6 +24,10 @@ function addBookToLibrary(title, author, pages, isRead) {
   displayBook(newBook);
 }
 
+Book.prototype.toggleReadStatus = function () {
+  this.isRead = !this.isRead;
+};
+
 function displayBook(book) {
   const card = document.createElement("div");
   const bookInfo = document.createElement("div");
@@ -47,7 +51,7 @@ function displayBook(book) {
   isReadBtn.style.backgroundColor = book.isRead ? "#008080" : "#ffdab9";
 
   isReadBtn.addEventListener("click", () => {
-    book.isRead = !book.isRead;
+    book.toggleReadStatus();
     isReadBtn.textContent = book.isRead ? "Read" : "Not Read Yet";
     isReadBtn.style.backgroundColor = book.isRead ? "#008080" : "#ffdab9";
   });
@@ -92,19 +96,15 @@ form.addEventListener("submit", (event) => {
   if (inputTitle.value.length < 3 || inputTitle.value.length > 30) {
     inputTitle.setCustomValidity("Title must be between 3 and 30 characters.");
   }
-  inputPages.setCustomValidity("");
 
   if (inputAuthor.value.length < 3 || inputAuthor.value.length > 50) {
     inputAuthor.setCustomValidity(
       "Author name must be between 3 and 50 characters."
     );
   }
-  inputPages.setCustomValidity("");
-
   if (!/^\d+$/.test(inputPages.value) || parseInt(inputPages.value) <= 0) {
     inputPages.setCustomValidity("Pages must be a positive number.");
   }
-  inputPages.setCustomValidity("");
 
   if (form.checkValidity()) {
     addBookToLibrary(
