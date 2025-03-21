@@ -1,0 +1,273 @@
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  color: #ff6933;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Courier Prime", monospace;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  background-color: #ffebcd;
+}
+
+.header {
+  background-color: #ffdab9;
+  box-shadow: 5px 5px 10px #333333;
+  width: 100%;
+  text-align: center;
+}
+
+.library-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 90vw;
+  gap: 20px;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #008080;
+  border-radius: 10px;
+  min-height: 8rem;
+  min-width: 12rem;
+  max-width: 100%;
+  height: 10rem;
+  width: 20rem;
+  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.book-card div {
+  padding: 0.4rem;
+}
+
+.new-book-btn {
+  margin-top: 1.5rem;
+  border: none;
+  color: #333333;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  width: 12rem;
+  cursor: pointer;
+}
+
+.new-book-btn:hover {
+  background-color: #33333333;
+}
+
+.card-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card-buttons button {
+  border: 3px solid #333333;
+  color: #333333;
+  border-radius: 5px;
+  padding: 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 8.3rem;
+  cursor: pointer;
+}
+
+.card-buttons .remove-button {
+  background-color: #ff6933;
+}
+
+.book-dialog {
+  background-color: #ffebcd;
+  border: 3px solid #008080;
+  border-radius: 10px;
+  padding: 2rem;
+  color: #ff6933;
+  font-family: "Courier Prime", monospace;
+  max-width: 90%;
+  width: 400px;
+  box-shadow: 5px 5px 10px #33333380;
+}
+
+.book-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.book-dialog p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.book-dialog .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-dialog .form div {
+  margin: 0.5rem 0;
+}
+
+.book-dialog .form div p {
+  font-size: 1.2rem;
+  margin: 0.2rem 0;
+  text-align: left;
+}
+
+.book-dialog input[type="text"],
+.book-dialog input[type="number"] {
+  border: 2px solid #008080;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-family: inherit;
+  margin-bottom: 0.8rem;
+  background-color: #ffdab9;
+  color: #333333;
+  font-size: 1rem;
+}
+
+.book-dialog input[type="checkbox"] {
+  margin-left: 1rem;
+  transform: scale(1.5);
+  accent-color: #008080;
+}
+
+.book-dialog label {
+  font-size: 1.1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ff6933;
+}
+
+.close-btn:hover {
+  color: #ff4500;
+}
+
+.submit-btn {
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #006666;
+  animation: float 1s ease-in-out infinite;
+}
+
+footer {
+  margin-top: auto;
+  display: flex;
+  background-color: transparent;
+  color: #333333;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+footer a {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  text-decoration: underline;
+  background-color: transparent;
+  color: #333333;
+  font-size: 1.2rem;
+  gap: 8px;
+}
+
+footer a:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+.github-logo {
+  display: inline-block;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  max-width: 28px;
+  max-height: 28px;
+  transition: all 0.3s ease-in-out;
+}
+
+.github-logo:hover {
+  animation: float 3s ease-in-out infinite, flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    box-shadow: 0 0 10px #ff6933, 0 0 20px #ff6933, 0 0 30px #ff6933;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff6933, 0 0 30px #ff6933, 0 0 40px #ff6933;
+  }
+  100% {
+    box-shadow: 0 0 15px #ff6933, 0 0 25px #ff6933, 0 0 35px #ff6933;
+  }
+}
+
+@keyframes flickerText {
+  0% {
+    text-shadow: 0 0 10px #ff6933, 0 0 20px #ff6933, 0 0 30px #ff6933;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff6933, 0 0 30px #ff6933, 0 0 40px #ff6933;
+  }
+  100% {
+    text-shadow: 0 0 15px #ff6933, 0 0 25px #ff6933, 0 0 35px #ff6933;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 600px) {
+  /* Adjust for smaller screens */
+  .library-container {
+    justify-content: center; /* Center items if only one fits */
+  }
+}

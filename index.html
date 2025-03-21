@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library App</title>
+    <link rel="stylesheet" href="./library.css" />
+  </head>
+  <body>
+    <div class="header"><h1>Library App</h1></div>
+    <button class="new-book-btn">+ New Book</button>
+    <div class="library-container"></div>
+    <div class="modal-container">
+      <dialog class="book-dialog">
+        <button class="close-btn">&times;</button>
+        <p>Add New Book</p>
+        <form class="form">
+          <div><p>Title</p></div>
+          <input type="text" id="title" required />
+          <div><p>Author</p></div>
+          <input type="text" id="author" required />
+          <div><p>No. of Pages</p></div>
+          <input type="number" id="pages" required />
+          <div>
+            <label for="is-read">Have You Read It?</label>
+            <input type="checkbox" id="isRead" />
+          </div>
+          <br />
+          <button class="submit-btn" type="submit">Submit</button>
+        </form>
+      </dialog>
+    </div>
+    <footer>
+      <a href="https://github.com/JiaShin2000/calculator-app" target="_blank"
+        >© Designed By Shin
+        <img class="github-logo" src="./assets/icons/github-mark.svg"
+      /></a>
+    </footer>
+  </body>
+  <script src="./library.js"></script>
+</html>
